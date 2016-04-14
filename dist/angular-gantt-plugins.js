@@ -2910,6 +2910,18 @@ Github: https://github.com/angular-gantt/angular-gantt.git
                             hideTooltip();
                         }
                     }
+
+                    if (moment.isMoment(taskTooltips.dateFormat)) {
+                      $scope.pluginScope.dateFormat = taskTooltips.dateFormat;
+                    }
+
+                    if (!isNaN(taskTooltips.delay)) {
+                      $scope.pluginScope.delay = taskTooltips.delay;
+                    }
+
+                    if (typeof(taskTooltips.content) === 'string') {
+                      $scope.pluginScope.content = taskTooltips.content;
+                    }
                 };
 
                 mouseMoveHandler = smartEvent($scope, bodyElement, 'mousemove', debounce(function(e) {
