@@ -155,6 +155,18 @@
                     var dateFormat = utils.firstProperty([taskTooltips, rowTooltips], 'dateFormat', $scope.pluginScope.dateFormat);
                     return $scope.task.model.to.format(dateFormat);
                 };
+                
+                if (moment.isMoment(taskTooltips.dateFormat)) {
+                  $scope.pluginScope.dateFormat = taskTooltips.dateFormat;
+                }
+
+                if (!isNaN(taskTooltips.delay)) {
+                  $scope.pluginScope.delay = taskTooltips.delay;
+                }
+
+                if (typeof(taskTooltips.content) === 'string') {
+                  $scope.pluginScope.content = taskTooltips.content;
+                }
 
                 $scope.task.getContentElement().bind('mousemove', function(evt) {
                     mouseEnterX = evt.clientX;
