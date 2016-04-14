@@ -155,8 +155,10 @@
                     var dateFormat = utils.firstProperty([taskTooltips, rowTooltips], 'dateFormat', $scope.pluginScope.dateFormat);
                     return $scope.task.model.to.format(dateFormat);
                 };
-                
-                if (moment.isMoment(taskTooltips.dateFormat)) {
+
+                var taskTooltips = $scope.task.model.tooltips;
+
+                if (typeof(taskTooltips.dateFormat) === 'string') {
                   $scope.pluginScope.dateFormat = taskTooltips.dateFormat;
                 }
 
@@ -220,4 +222,3 @@
         };
     }]);
 }());
-

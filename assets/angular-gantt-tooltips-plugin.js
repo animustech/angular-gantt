@@ -229,6 +229,20 @@ Github: https://github.com/angular-gantt/angular-gantt.git
                     return $scope.task.model.to.format(dateFormat);
                 };
 
+                var taskTooltips = $scope.task.model.tooltips;
+
+                if (typeof(taskTooltips.dateFormat) === 'string') {
+                  $scope.pluginScope.dateFormat = taskTooltips.dateFormat;
+                }
+
+                if (!isNaN(taskTooltips.delay)) {
+                  $scope.pluginScope.delay = taskTooltips.delay;
+                }
+
+                if (typeof(taskTooltips.content) === 'string') {
+                  $scope.pluginScope.content = taskTooltips.content;
+                }
+
                 $scope.task.getContentElement().bind('mousemove', function(evt) {
                     mouseEnterX = evt.clientX;
                 });
@@ -281,7 +295,6 @@ Github: https://github.com/angular-gantt/angular-gantt.git
         };
     }]);
 }());
-
 
 angular.module('gantt.tooltips.templates', []).run(['$templateCache', function($templateCache) {
     $templateCache.put('plugins/tooltips/tooltip.tmpl.html',
