@@ -407,6 +407,7 @@ Github: https://github.com/angular-gantt/angular-gantt.git
 angular.module('gantt.tree.templates', []).run(['$templateCache', function($templateCache) {
     $templateCache.put('plugins/tree/sideContentTree.tmpl.html',
         '<div class="gantt-side-content-tree" ng-controller="GanttTreeController">\n' +
+        '    <div class="gantt-side-resizer" col-resizable=".gantt-side-content-tree"></div>\n' +
         '    <gantt-tree-header>\n' +
         '    </gantt-tree-header>\n' +
         '    <gantt-tree-body>\n' +
