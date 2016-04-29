@@ -2095,6 +2095,7 @@ Github: https://github.com/angular-gantt/angular-gantt.git
 
                 if (self.pluginScope.endpoints) {
                     for (var i = 0; i < self.pluginScope.endpoints.length; i++) {
+                        console.log(task.$element, self.pluginScope.endpoints[i]);
                         var endpointObject = self.plumb.addEndpoint(task.$element, self.pluginScope.endpoints[i]);
                         endpointObject.setVisible(false, true, true); // hide endpoint
                         endpointObject.$task = task;
