@@ -156,6 +156,7 @@ Github: https://github.com/angular-gantt/angular-gantt.git
                         });
 
                         api.tasks.on.displayed(scope, debounce(function(tasks) {
+                          console.log(tasks);
                             manager.setTasks(tasks);
                             manager.refresh();
                             if (scope.conflictChecker && scope.enabled) {
@@ -206,7 +207,6 @@ Github: https://github.com/angular-gantt/angular-gantt.git
                 };
             }]);
 }());
-
 
 (function() {
     'use strict';
