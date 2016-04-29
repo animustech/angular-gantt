@@ -148,11 +148,11 @@
                             manager.removeDependenciesFromTask(task);
                         });
 
-                        api.tasks.on.displayed(scope, debounce(function(tasks) {
-                            manager.setTasks(tasks);
+                        api.tasks.on.displayed(scope, debounce(function(tasks, filteredTasks, visibleTasks) {
+                            manager.setTasks(visibleTasks);
                             manager.refresh();
                             if (scope.conflictChecker && scope.enabled) {
-                                checker.refresh(tasks);
+                                checker.refresh(visibleTasks);
                             }
                         }));
 
