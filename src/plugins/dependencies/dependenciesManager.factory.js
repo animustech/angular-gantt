@@ -221,6 +221,7 @@
 
                 task.dependencies.endpoints = [];
 
+                console.log(self.pluginScope.endpoints);
                 if (self.pluginScope.endpoints) {
                     for (var i = 0; i < self.pluginScope.endpoints.length; i++) {
                         console.log(task.$element, self.pluginScope.endpoints[i]);
