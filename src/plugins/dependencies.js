@@ -149,6 +149,7 @@
                         });
 
                         api.tasks.on.displayed(scope, debounce(function(tasks) {
+                          console.log(tasks);
                             manager.setTasks(tasks);
                             manager.refresh();
                             if (scope.conflictChecker && scope.enabled) {
@@ -199,4 +200,3 @@
                 };
             }]);
 }());
-
