@@ -281,6 +281,7 @@
                     if (isTaskEnabled(task)) {
                         newTasks[task.model.id] = task;
                         tasksList.push(task);
+                        console.log(task);
                         addTaskEndpoints(task);
                         addTaskMouseHandler(task);
                     }

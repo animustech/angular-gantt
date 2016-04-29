@@ -156,7 +156,6 @@ Github: https://github.com/angular-gantt/angular-gantt.git
                         });
 
                         api.tasks.on.displayed(scope, debounce(function(tasks) {
-                          console.log(tasks);
                             manager.setTasks(tasks);
                             manager.refresh();
                             if (scope.conflictChecker && scope.enabled) {
@@ -701,6 +700,7 @@ Github: https://github.com/angular-gantt/angular-gantt.git
                     if (isTaskEnabled(task)) {
                         newTasks[task.model.id] = task;
                         tasksList.push(task);
+                        console.log(task);
                         addTaskEndpoints(task);
                         addTaskMouseHandler(task);
                     }
