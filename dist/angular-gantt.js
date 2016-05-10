@@ -4326,11 +4326,15 @@ Github: https://github.com/angular-gantt/angular-gantt.git
                 var updateListeners = function() {
                     var i, l;
 
+                    var timer = new Date();
+                    console.log('start scroll ' + timer.getMilliseconds());
+
                     var vertical = controllers[1].getVerticalRecievers();
                     for (i = 0, l = vertical.length; i < l; i++) {
                         var vElement = vertical[i];
                         if (vElement.parentNode.scrollTop !== el.scrollTop) {
                             vElement.parentNode.scrollTop = el.scrollTop;
+                            console.log('end scroll ' + timer.getMilliseconds(), vertical[i]);
                         }
                     }
 
@@ -4360,7 +4364,6 @@ Github: https://github.com/angular-gantt/angular-gantt.git
         };
     }]);
 }());
-
 
 (function(){
     'use strict';
