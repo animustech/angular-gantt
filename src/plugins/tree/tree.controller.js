@@ -244,12 +244,18 @@
             }
         });
 
+        $scope.gantt.api.registerEvent('tree', 'clicked');
+
+        $scope.selectRow = function() {
+          $scope.gantt.api.tree.raise.clicked($scope.$modelValue);
+        };
+
         $scope.isCollapseDisabled = function() {
             return !$scope.$parent.childrenRows || $scope.$parent.childrenRows.length === 0;
         };
 
         $scope.getValue = function() {
-            return $scope.row.model.name;
+          return $scope.row.model.name;
         };
 
         $scope.getRowContent = function() {
@@ -279,4 +285,3 @@
         });
     }]);
 }());
-
