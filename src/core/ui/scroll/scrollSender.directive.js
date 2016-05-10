@@ -44,13 +44,13 @@
 
                   if ($scrollTop > $height)
                   {
-                    $scrollTop = $height
+                    $scrollTop = $height;
                   }
                   else if ($scrollTop < 0)
                   {
                     $scrollTop = 0;
                   }
-                  else if (el.scrollTop != 0 && el.scrollTop == prevScrollTop && $scrollTop - 100 - delta > el.scrollTop)
+                  else if (el.scrollTop !== 0 && el.scrollTop === prevScrollTop && $scrollTop - 100 - delta > el.scrollTop)
                   {
                     $scrollTop = $scrollTop;
                   }
@@ -85,10 +85,10 @@
                     $scrollTop = el.scrollTop;
                     updateListeners();
                   }
-                }
+                };
 
                 element.bind('scroll', scroll);
-                element.bind('DOMMouseScroll mousewheel', wheelScroll)
+                element.bind('DOMMouseScroll mousewheel', wheelScroll);
 
                 scope.$watch(function() {
                     return controllers[0].gantt.width;
