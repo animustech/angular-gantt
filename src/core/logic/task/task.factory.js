@@ -111,6 +111,9 @@
         Task.prototype.getBackgroundElement = function() {
             if (this.$element !== undefined) {
                 var backgroundElement = this.$element[0].querySelector('.gantt-task-background');
+                if(backgroundElement === null) {
+                    backgroundElement = this.$element;
+                }
                 if (backgroundElement !== undefined) {
                     backgroundElement = angular.element(backgroundElement);
                 }
@@ -121,6 +124,9 @@
         Task.prototype.getContentElement = function() {
             if (this.$element !== undefined) {
                 var contentElement = this.$element[0].querySelector('.gantt-task-content');
+                if(contentElement === null) {
+                    contentElement = this.$element;
+                }
                 if (contentElement !== undefined) {
                     contentElement = angular.element(contentElement);
                 }
@@ -131,6 +137,9 @@
         Task.prototype.getForegroundElement = function() {
             if (this.$element !== undefined) {
                 var foregroundElement = this.$element[0].querySelector('.gantt-task-foreground');
+                if(foregroundElement === null) {
+                    foregroundElement = this.$element;
+                }
                 if (foregroundElement !== undefined) {
                     foregroundElement = angular.element(foregroundElement);
                 }

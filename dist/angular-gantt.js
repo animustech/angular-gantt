@@ -3247,6 +3247,9 @@ Github: https://github.com/angular-gantt/angular-gantt.git
         Task.prototype.getBackgroundElement = function() {
             if (this.$element !== undefined) {
                 var backgroundElement = this.$element[0].querySelector('.gantt-task-background');
+                if(backgroundElement === null) {
+                    backgroundElement = this.$element;
+                }
                 if (backgroundElement !== undefined) {
                     backgroundElement = angular.element(backgroundElement);
                 }
@@ -3257,6 +3260,9 @@ Github: https://github.com/angular-gantt/angular-gantt.git
         Task.prototype.getContentElement = function() {
             if (this.$element !== undefined) {
                 var contentElement = this.$element[0].querySelector('.gantt-task-content');
+                if(contentElement === null) {
+                    contentElement = this.$element;
+                }
                 if (contentElement !== undefined) {
                     contentElement = angular.element(contentElement);
                 }
@@ -3267,6 +3273,9 @@ Github: https://github.com/angular-gantt/angular-gantt.git
         Task.prototype.getForegroundElement = function() {
             if (this.$element !== undefined) {
                 var foregroundElement = this.$element[0].querySelector('.gantt-task-foreground');
+                if(foregroundElement === null) {
+                    foregroundElement = this.$element;
+                }
                 if (foregroundElement !== undefined) {
                     foregroundElement = angular.element(foregroundElement);
                 }
@@ -5321,7 +5330,7 @@ Github: https://github.com/angular-gantt/angular-gantt.git
     }]);
 }());
 
-angular.module('gantt.templates', []).run(['$templateCache', function($templateCache) {
+angular.module('gantt.templates', []).run(['$templateCache', function ($templateCache) {
     $templateCache.put('template/gantt.tmpl.html',
         '<div class="gantt unselectable" ng-cloak gantt-scroll-manager gantt-element-width-listener="ganttElementWidth">\n' +
         '    <gantt-side>\n' +
