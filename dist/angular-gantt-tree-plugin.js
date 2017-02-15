@@ -24,6 +24,8 @@ Github: https://github.com/angular-gantt/angular-gantt.git
             link: function(scope, element, attrs, ganttCtrl) {
                 var api = ganttCtrl.gantt.api;
 
+                api.registerEvent('tree', 'collapsed');
+
                 // Load options from global options attribute.
                 if (scope.options && typeof(scope.options.sortable) === 'object') {
                     for (var option in scope.options.sortable) {
@@ -276,9 +278,6 @@ Github: https://github.com/angular-gantt/angular-gantt.git
         $scope.gantt.api.registerMethod('tree', 'isCollapsed', isRowCollapsed, this);
         $scope.gantt.api.registerMethod('tree', 'expand', expandRow, this);
         $scope.gantt.api.registerMethod('tree', 'collapse', collapseRow, this);
-
-        $scope.gantt.api.registerEvent('tree', 'collapsed');
-
         $scope.gantt.api.registerMethod('tree', 'getHierarchy', getHierarchy, this);
 
         $scope.$watchCollection('gantt.rowsManager.filteredRows', function() {

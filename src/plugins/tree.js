@@ -17,6 +17,8 @@
             link: function(scope, element, attrs, ganttCtrl) {
                 var api = ganttCtrl.gantt.api;
 
+                api.registerEvent('tree', 'collapsed');
+
                 // Load options from global options attribute.
                 if (scope.options && typeof(scope.options.sortable) === 'object') {
                     for (var option in scope.options.sortable) {

@@ -186,9 +186,6 @@
         $scope.gantt.api.registerMethod('tree', 'isCollapsed', isRowCollapsed, this);
         $scope.gantt.api.registerMethod('tree', 'expand', expandRow, this);
         $scope.gantt.api.registerMethod('tree', 'collapse', collapseRow, this);
-
-        $scope.gantt.api.registerEvent('tree', 'collapsed');
-
         $scope.gantt.api.registerMethod('tree', 'getHierarchy', getHierarchy, this);
 
         $scope.$watchCollection('gantt.rowsManager.filteredRows', function() {
